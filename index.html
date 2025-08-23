@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Liana - Dance Therapy & Clinical Psychology | Utrecht</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Dr. Liana</h2>
+                <span>Dance Therapy & Psychology</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="calming-pattern"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="gentle-float">Healing Through Movement</h1>
+                <p class="soft-pulse">Welcome to my practice in Utrecht. I'm Dr. Liana, a clinical psychologist specializing in dance therapy. Together, we'll explore the transformative power of movement and psychology.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Book Consultation</a>
+                    <a href="#events" class="btn btn-secondary">View Events</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder gentle-float">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <h2 class="section-title">About Dr. Liana</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>As a clinical psychologist with a specialization in dance therapy, I believe in the profound connection between mind, body, and spirit. Based in the beautiful city of Utrecht, I've dedicated my career to helping individuals discover healing through the art of movement.</p>
+                    <p>My approach combines evidence-based psychological practices with the expressive freedom of dance therapy, creating a unique therapeutic experience that addresses both mental and physical well-being.</p>
+                    <div class="credentials">
+                        <h3>Qualifications & Experience</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Licensed Clinical Psychologist</li>
+                            <li><i class="fas fa-check"></i> Certified Dance Movement Therapist</li>
+                            <li><i class="fas fa-check"></i> 10+ years of clinical experience</li>
+                            <li><i class="fas fa-check"></i> Specialized in trauma and anxiety disorders</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Individual Dance Therapy</h3>
+                    <p>One-on-one sessions combining movement and psychological support for personal healing and growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Sessions</h3>
+                    <p>Experience the power of collective movement in a supportive group environment.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Trauma Recovery</h3>
+                    <p>Specialized programs for trauma recovery using body-based therapeutic approaches.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Clinical Psychology</h3>
+                    <p>Traditional psychological counseling for anxiety, depression, and life transitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Events & Workshops</h2>
+                <button class="btn btn-primary" onclick="openAddEventModal()">
+                    <i class="fas fa-plus"></i> Add Event
+                </button>
+            </div>
+            <div id="events-container" class="events-grid">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Psychology & Wellness Blog</h2>
+                <button class="btn btn-primary" onclick="openAddBlogModal()">
+                    <i class="fas fa-plus"></i> Add Article
+                </button>
+            </div>
+            <div id="blog-container" class="blog-grid">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Location</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Utrecht, Netherlands<br>
+                            Address available upon appointment</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+31 (0)30 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>dr.liana@dancetherapy.nl</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Mon-Fri: 9:00 AM - 6:00 PM<br>
+                            Sat: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Liana</h3>
+                    <p>Transforming lives through dance therapy and clinical psychology in Utrecht.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Liana Dance Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('event-modal')">&times;</span>
+            <h2 id="event-modal-title">Event Details</h2>
+            <div id="event-modal-body">
+                <!-- Event details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="add-event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-event-modal')">&times;</span>
+            <h2>Add New Event</h2>
+            <form id="add-event-form">
+                <input type="text" id="event-title" placeholder="Event Title" required>
+                <input type="date" id="event-date" required>
+                <input type="time" id="event-time" required>
+                <input type="text" id="event-location" placeholder="Location" required>
+                <input type="number" id="event-price" placeholder="Price (€)" step="0.01">
+                <input type="number" id="event-spots" placeholder="Available Spots" required>
+                <textarea id="event-description" placeholder="Event Description" rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-blog-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-blog-modal')">&times;</span>
+            <h2>Add New Blog Article</h2>
+            <form id="add-blog-form">
+                <input type="text" id="blog-title" placeholder="Article Title" required>
+                <input type="text" id="blog-author" placeholder="Author" value="Dr. Liana" required>
+                <textarea id="blog-content" placeholder="Article Content" rows="10" required></textarea>
+                <input type="text" id="blog-tags" placeholder="Tags (comma separated)">
+                <button type="submit" class="btn btn-primary">Publish Article</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('booking-modal')">&times;</span>
+            <h2>Book Event</h2>
+            <div id="booking-event-info"></div>
+            <form id="booking-form">
+                <input type="text" id="booking-name" placeholder="Your Name" required>
+                <input type="email" id="booking-email" placeholder="Your Email" required>
+                <input type="tel" id="booking-phone" placeholder="Phone Number" required>
+                <textarea id="booking-notes" placeholder="Additional Notes" rows="3"></textarea>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
