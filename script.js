@@ -24,7 +24,8 @@ let events = [
         price: 45,
         spots: 12,
         booked: 3,
-        description: "Join us for an introductory workshop exploring the fundamentals of dance therapy. This session will combine gentle movement exercises with mindfulness techniques to promote emotional well-being and self-expression."
+        description: "Join us for an introductory workshop exploring the fundamentals of dance therapy. This session will combine gentle movement exercises with mindfulness techniques to promote emotional well-being and self-expression.",
+        category: "workshop"
     },
     {
         id: 2,
@@ -35,7 +36,8 @@ let events = [
         price: 35,
         spots: 8,
         booked: 5,
-        description: "A specialized group session designed for individuals working through trauma. Using body-based therapeutic approaches, we'll explore safe movement practices that support healing and recovery."
+        description: "A specialized group session designed for individuals working through trauma. Using body-based therapeutic approaches, we'll explore safe movement practices that support healing and recovery.",
+        category: "group"
     },
     {
         id: 3,
@@ -46,8 +48,93 @@ let events = [
         price: 25,
         spots: 15,
         booked: 7,
-        description: "Our monthly community circle brings together individuals from all backgrounds to experience the joy and healing power of collective movement. No experience necessary!"
+        description: "Our monthly community circle brings together individuals from all backgrounds to experience the joy and healing power of collective movement. No experience necessary!",
+        category: "group"
     },
+    {
+        id: 4,
+        title: "Advanced Movement Therapy Intensive",
+        date: "2024-03-08",
+        time: "09:00",
+        location: "Utrecht Dance Academy",
+        price: 120,
+        spots: 6,
+        booked: 2,
+        description: "A comprehensive 6-hour intensive workshop for experienced practitioners and therapists. Explore advanced techniques in movement therapy, body awareness, and therapeutic choreography.",
+        category: "workshop"
+    },
+    {
+        id: 5,
+        title: "Individual Dance Therapy Sessions",
+        date: "2024-03-10",
+        time: "10:00",
+        location: "Private Practice, Utrecht",
+        price: 85,
+        spots: 1,
+        booked: 0,
+        description: "One-on-one personalized dance therapy sessions tailored to your specific needs. Perfect for deep personal work and individual healing journeys.",
+        category: "individual"
+    },
+    {
+        id: 6,
+        title: "Mindfulness & Movement for Stress Relief",
+        date: "2024-03-15",
+        time: "16:00",
+        location: "Utrecht Wellness Center",
+        price: 30,
+        spots: 20,
+        booked: 12,
+        description: "Learn practical techniques for managing stress through gentle movement and mindfulness practices. Suitable for all levels and perfect for busy professionals.",
+        category: "workshop"
+    },
+    {
+        id: 7,
+        title: "Teen Dance Therapy Group",
+        date: "2024-03-20",
+        time: "15:30",
+        location: "Utrecht Youth Center",
+        price: 25,
+        spots: 12,
+        booked: 8,
+        description: "A supportive group specifically designed for teenagers exploring identity, emotions, and self-expression through movement. Safe space for emotional exploration.",
+        category: "group"
+    },
+    {
+        id: 8,
+        title: "Professional Training: Dance Therapy Fundamentals",
+        date: "2024-03-25",
+        time: "09:00",
+        location: "Utrecht University",
+        price: 250,
+        spots: 15,
+        booked: 5,
+        description: "Professional development course for healthcare workers, therapists, and educators. Learn the foundations of dance movement therapy for clinical practice.",
+        category: "training"
+    },
+    {
+        id: 9,
+        title: "Elderly Movement & Memory Enhancement",
+        date: "2024-03-30",
+        time: "11:00",
+        location: "Utrecht Senior Community Center",
+        price: 20,
+        spots: 18,
+        booked: 10,
+        description: "Gentle movement therapy designed specifically for seniors to enhance cognitive function, improve balance, and promote social connection through dance.",
+        category: "group"
+    },
+    {
+        id: 10,
+        title: "Couples Dance Therapy Workshop",
+        date: "2024-04-05",
+        time: "14:00",
+        location: "Private Practice, Utrecht",
+        price: 75,
+        spots: 8,
+        booked: 3,
+        description: "Strengthen your relationship through shared movement experiences. Learn to communicate, trust, and connect with your partner through dance therapy.",
+        category: "workshop"
+    }
 ];
 
 let blogs = [
@@ -66,6 +153,38 @@ let blogs = [
         date: "2024-01-20",
         content: "Beginning therapy can feel overwhelming, especially when it involves movement and expression. Many clients ask what to expect in their first dance therapy session. The answer is simple: there's no wrong way to move. Our sessions begin with a gentle check-in, allowing you to share how you're feeling in the moment. We then explore movement that feels authentic to your current emotional state. Whether it's gentle swaying, structured exercises, or free-form expression, every movement is valid and therapeutic. The goal isn't performance – it's connection. Connection to your body, your emotions, and ultimately, to your path of healing.",
         tags: ["getting started", "therapy process", "expectations", "healing"]
+    },
+    {
+        id: 3,
+        title: "Understanding Trauma Through Body Awareness",
+        author: "Dr. Liana",
+        date: "2024-01-25",
+        content: "Trauma affects not just the mind, but the entire body. Understanding how trauma manifests physically is crucial for effective healing. This article explores the somatic aspects of trauma and how dance therapy provides a safe pathway for processing and releasing stored trauma energy.",
+        tags: ["trauma", "body awareness", "healing", "somatic therapy"]
+    },
+    {
+        id: 4,
+        title: "The Power of Group Healing in Dance Therapy",
+        author: "Dr. Liana",
+        date: "2024-01-30",
+        content: "Group dance therapy offers unique benefits that individual sessions cannot provide. The collective energy, shared experiences, and mutual support create a powerful healing environment. This article explores the science behind group dynamics in therapeutic settings.",
+        tags: ["group therapy", "community", "healing", "wellness"]
+    },
+    {
+        id: 5,
+        title: "Mindfulness in Movement: A Daily Practice",
+        author: "Dr. Liana",
+        date: "2024-02-05",
+        content: "Incorporating mindfulness into daily movement can transform ordinary activities into therapeutic practices. Learn simple techniques for bringing awareness to your body throughout the day.",
+        tags: ["mindfulness", "daily practice", "wellness", "movement"]
+    },
+    {
+        id: 6,
+        title: "Research Update: Dance Therapy and Neuroplasticity",
+        author: "Dr. Liana",
+        date: "2024-02-10",
+        content: "Latest research findings on how dance therapy promotes neuroplasticity and brain health. This comprehensive review covers recent studies and their implications for clinical practice.",
+        tags: ["research", "neuroscience", "neuroplasticity", "brain health"]
     }
 ];
 
@@ -220,7 +339,7 @@ function loadBlogs() {
     });
 }
 
-// Load only the 3 latest blog posts for the main page
+// Load only the 2 latest blog posts for the main page
 function loadLatestBlogs() {
     const container = document.getElementById('blog-container');
     if (!container) return;
@@ -232,9 +351,9 @@ function loadLatestBlogs() {
         return;
     }
     
-    // Sort blogs by date and take only the 3 latest
+    // Sort blogs by date and take only the 2 latest
     const sortedBlogs = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-    const latestBlogs = sortedBlogs.slice(0, 3);
+    const latestBlogs = sortedBlogs.slice(0, 2);
     
     latestBlogs.forEach(blog => {
         const blogCard = createBlogCard(blog);
