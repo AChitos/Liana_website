@@ -75,8 +75,8 @@ let currentBlogId = blogs.length + 1;
 
 // Load events on page load
 document.addEventListener('DOMContentLoaded', () => {
-    loadEvents();
-    loadBlogs();
+    loadLatestEvents();
+    loadLatestBlogs();
     setupFormHandlers();
 });
 
@@ -93,6 +93,28 @@ function loadEvents() {
     }
     
     events.forEach(event => {
+        const eventCard = createEventCard(event);
+        container.appendChild(eventCard);
+    });
+}
+
+// Load only the 3 latest events for the main page
+function loadLatestEvents() {
+    const container = document.getElementById('events-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (events.length === 0) {
+        container.innerHTML = '<p class="no-content">No events scheduled yet. Check back soon!</p>';
+        return;
+    }
+    
+    // Sort events by date and take only the 3 latest
+    const sortedEvents = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const latestEvents = sortedEvents.slice(0, 3);
+    
+    latestEvents.forEach(event => {
         const eventCard = createEventCard(event);
         container.appendChild(eventCard);
     });
@@ -193,6 +215,28 @@ function loadBlogs() {
     }
     
     blogs.forEach(blog => {
+        const blogCard = createBlogCard(blog);
+        container.appendChild(blogCard);
+    });
+}
+
+// Load only the 3 latest blog posts for the main page
+function loadLatestBlogs() {
+    const container = document.getElementById('blog-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (blogs.length === 0) {
+        container.innerHTML = '<p class="no-content">No articles published yet. Check back soon for valuable insights!</p>';
+        return;
+    }
+    
+    // Sort blogs by date and take only the 3 latest
+    const sortedBlogs = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const latestBlogs = sortedBlogs.slice(0, 3);
+    
+    latestBlogs.forEach(blog => {
         const blogCard = createBlogCard(blog);
         container.appendChild(blogCard);
     });

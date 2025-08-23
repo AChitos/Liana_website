@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Dr. Liana Dance Therapy | Utrecht</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Dr. Liana</h2>
+                <span>Dance Therapy & Psychology</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Psychology & Wellness Blog</h1>
+                <p>Insights, research, and practical guidance for mental health and healing through movement</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Blog</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-full">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">All Articles</h2>
+                <div class="blog-filter">
+                    <button class="filter-btn active" data-filter="all">All Topics</button>
+                    <button class="filter-btn" data-filter="therapy">Therapy</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                    <button class="filter-btn" data-filter="wellness">Wellness</button>
+                    <button class="filter-btn" data-filter="trauma">Trauma</button>
+                </div>
+            </div>
+            
+            <div id="blog-container-full" class="blog-grid-full">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+        <div class="container">
+            <div class="featured-article-content">
+                <div class="featured-article-info">
+                    <div class="article-meta">
+                        <span class="article-category">Featured</span>
+                        <span class="article-date">January 15, 2024</span>
+                    </div>
+                    <h2>The Science Behind Dance Therapy: A Comprehensive Guide</h2>
+                    <p class="article-excerpt">Dance therapy, also known as dance movement therapy (DMT), is a psychotherapeutic use of movement and dance to support intellectual, emotional, and motor functions of the body. This comprehensive guide explores the scientific foundations, research evidence, and practical applications of this transformative therapeutic approach.</p>
+                    <div class="article-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-clock"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-tags"></i>
+                            <span>Research, Therapy, Neuroscience</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-user"></i>
+                            <span>Dr. Liana</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openArticleModal(featuredArticle)">
+                        <i class="fas fa-book-open"></i> Read Full Article
+                    </button>
+                </div>
+                <div class="featured-article-image">
+                    <div class="article-image-placeholder">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <h2 class="section-title">Article Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Research & Science</h3>
+                    <p>Evidence-based articles exploring the latest research in dance therapy and psychology.</p>
+                    <span class="category-count">5 articles</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Therapeutic Techniques</h3>
+                    <p>Practical guidance and techniques for healing through movement and expression.</p>
+                    <span class="category-count">4 articles</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Wellness & Self-Care</h3>
+                    <p>Tips and insights for maintaining mental health and emotional well-being.</p>
+                    <span class="category-count">3 articles</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trauma & Recovery</h3>
+                    <p>Specialized content for trauma recovery and healing processes.</p>
+                    <span class="category-count">2 articles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-signup">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to receive the latest articles, research updates, and wellness tips directly in your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Liana</h3>
+                    <p>Transforming lives through dance therapy and clinical psychology in Utrecht.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Liana Dance Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('article-modal')">&times;</span>
+            <div id="article-modal-body">
+                <!-- Article content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Featured article data
+        const featuredArticle = {
+            id: 'featured',
+            title: 'The Science Behind Dance Therapy: A Comprehensive Guide',
+            author: 'Dr. Liana',
+            date: '2024-01-15',
+            category: 'Research',
+            readTime: '8 min read',
+            content: `Dance therapy, also known as dance movement therapy (DMT), is a psychotherapeutic use of movement and dance to support intellectual, emotional, and motor functions of the body. Research shows that dance therapy can significantly reduce symptoms of depression and anxiety while improving overall quality of life.
+
+The practice integrates physical, emotional, cognitive, and social aspects of an individual, promoting holistic healing. Studies have demonstrated that rhythmic movement activates the brain's reward system, releasing endorphins and promoting neuroplasticity. This makes dance therapy particularly effective for trauma recovery, as it allows individuals to process experiences through the body when words may not be sufficient.
+
+## The Neuroscience of Movement
+
+Recent advances in neuroscience have revealed fascinating insights into how movement affects the brain. When we engage in dance therapy:
+
+- **Neuroplasticity**: Movement stimulates the growth of new neural connections
+- **Stress Reduction**: Physical activity reduces cortisol levels and increases serotonin
+- **Emotional Processing**: Movement helps process and release stored emotional energy
+- **Social Connection**: Group dance therapy activates mirror neurons, fostering empathy
+
+## Evidence-Based Benefits
+
+Multiple studies have documented the effectiveness of dance therapy:
+
+1. **Depression**: 45% reduction in symptoms after 12 weeks
+2. **Anxiety**: 38% improvement in anxiety levels
+3. **Trauma**: Significant reduction in PTSD symptoms
+4. **Self-Esteem**: Improved body image and self-confidence
+
+## Practical Applications
+
+Dance therapy can be adapted for various populations and settings:
+
+- **Individual Sessions**: Personalized therapeutic movement
+- **Group Therapy**: Collective healing experiences
+- **Trauma Recovery**: Body-based processing techniques
+- **Elderly Care**: Movement for cognitive and physical health
+
+The integration of movement and psychology creates a unique therapeutic modality that honors the mind-body connection and promotes healing on multiple levels.`,
+            tags: ['research', 'therapy', 'neuroscience', 'evidence-based']
+        };
+
+        // Extended blog data
+        const extendedBlogs = [
+            {
+                id: 1,
+                title: 'Starting Your Healing Journey: What to Expect',
+                author: 'Dr. Liana',
+                date: '2024-01-20',
+                category: 'Therapy',
+                readTime: '6 min read',
+                content: 'Beginning therapy can feel overwhelming, especially when it involves movement and expression. Many clients ask what to expect in their first dance therapy session. The answer is simple: there\'s no wrong way to move. Our sessions begin with a gentle check-in, allowing you to share how you\'re feeling in the moment. We then explore movement that feels authentic to your current emotional state. Whether it\'s gentle swaying, structured exercises, or free-form expression, every movement is valid and therapeutic. The goal isn\'t performance – it\'s connection. Connection to your body, your emotions, and ultimately, to your path of healing.',
+                tags: ['getting started', 'therapy process', 'expectations', 'healing']
+            },
+            {
+                id: 2,
+                title: 'Understanding Trauma Through Body Awareness',
+                author: 'Dr. Liana',
+                date: '2024-01-25',
+                category: 'Trauma',
+                readTime: '10 min read',
+                content: 'Trauma affects not just the mind, but the entire body. Understanding how trauma manifests physically is crucial for effective healing. This article explores the somatic aspects of trauma and how dance therapy provides a safe pathway for processing and releasing stored trauma energy.',
+                tags: ['trauma', 'body awareness', 'healing', 'somatic therapy']
+            },
+            {
+                id: 3,
+                title: 'The Power of Group Healing in Dance Therapy',
+                author: 'Dr. Liana',
+                date: '2024-01-30',
+                category: 'Wellness',
+                readTime: '7 min read',
+                content: 'Group dance therapy offers unique benefits that individual sessions cannot provide. The collective energy, shared experiences, and mutual support create a powerful healing environment. This article explores the science behind group dynamics in therapeutic settings.',
+                tags: ['group therapy', 'community', 'healing', 'wellness']
+            },
+            {
+                id: 4,
+                title: 'Mindfulness in Movement: A Daily Practice',
+                author: 'Dr. Liana',
+                date: '2024-02-05',
+                category: 'Wellness',
+                readTime: '5 min read',
+                content: 'Incorporating mindfulness into daily movement can transform ordinary activities into therapeutic practices. Learn simple techniques for bringing awareness to your body throughout the day.',
+                tags: ['mindfulness', 'daily practice', 'wellness', 'movement']
+            },
+            {
+                id: 5,
+                title: 'Research Update: Dance Therapy and Neuroplasticity',
+                author: 'Dr. Liana',
+                date: '2024-02-10',
+                category: 'Research',
+                readTime: '12 min read',
+                content: 'Latest research findings on how dance therapy promotes neuroplasticity and brain health. This comprehensive review covers recent studies and their implications for clinical practice.',
+                tags: ['research', 'neuroscience', 'neuroplasticity', 'brain health']
+            }
+        ];
+
+        // Load all blogs on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllBlogs();
+            setupBlogFilters();
+            setupNewsletterForm();
+        });
+
+        function loadAllBlogs() {
+            const container = document.getElementById('blog-container-full');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            // Add featured article first
+            const featuredCard = createBlogCard(featuredArticle, true);
+            container.appendChild(featuredCard);
+            
+            // Add other articles
+            extendedBlogs.forEach(blog => {
+                const blogCard = createBlogCard(blog, false);
+                container.appendChild(blogCard);
+            });
+        }
+
+        function createBlogCard(blog, isFeatured = false) {
+            const card = document.createElement('div');
+            card.className = `blog-card ${isFeatured ? 'featured-blog-card' : ''} fade-in-up`;
+            card.onclick = () => openArticleModal(blog);
+            
+            const excerpt = blog.content.length > 200 ? blog.content.substring(0, 200) + '...' : blog.content;
+            
+            card.innerHTML = `
+                <div class="blog-header">
+                    <div class="blog-meta">
+                        <span class="article-category">${blog.category}</span>
+                        <span class="article-date">${formatDate(blog.date)}</span>
+                    </div>
+                    <h3 class="blog-title">${blog.title}</h3>
+                    <div class="blog-excerpt">${excerpt}</div>
+                    <div class="blog-meta-details">
+                        <span><i class="fas fa-user"></i> ${blog.author}</span>
+                        <span><i class="fas fa-clock"></i> ${blog.readTime}</span>
+                    </div>
+                </div>
+                <div class="blog-tags">
+                    ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+                ${isFeatured ? '<div class="featured-badge">Featured</div>' : ''}
+            `;
+            
+            return card;
+        }
+
+        function setupBlogFilters() {
+            const filterBtns = document.querySelectorAll('.blog-filter .filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    filterBlogs(filter);
+                });
+            });
+        }
+
+        function filterBlogs(filter) {
+            const container = document.getElementById('blog-container-full');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (filter === 'all') {
+                loadAllBlogs();
+                return;
+            }
+            
+            // Filter blogs based on category
+            const filteredBlogs = [featuredArticle, ...extendedBlogs].filter(blog => {
+                if (filter === 'therapy') return blog.category === 'Therapy';
+                if (filter === 'research') return blog.category === 'Research';
+                if (filter === 'wellness') return blog.category === 'Wellness';
+                if (filter === 'trauma') return blog.category === 'Trauma';
+                return true;
+            });
+            
+            filteredBlogs.forEach(blog => {
+                const isFeatured = blog.id === 'featured';
+                const blogCard = createBlogCard(blog, isFeatured);
+                container.appendChild(blogCard);
+            });
+        }
+
+        function formatDate(dateString) {
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        function openArticleModal(article) {
+            const modal = document.getElementById('article-modal');
+            const body = document.getElementById('article-modal-body');
+            
+            body.innerHTML = `
+                <div class="article-full">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">${article.category}</span>
+                            <span class="article-date">${formatDate(article.date)}</span>
+                        </div>
+                        <h1>${article.title}</h1>
+                        <div class="article-author">
+                            <i class="fas fa-user"></i> ${article.author}
+                        </div>
+                        <div class="article-read-time">
+                            <i class="fas fa-clock"></i> ${article.readTime}
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        ${article.content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}
+                    </div>
+                    <div class="article-tags">
+                        <strong>Tags:</strong>
+                        ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function setupNewsletterForm() {
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate newsletter signup
+                    alert('Thank you for subscribing! You will receive our latest articles and updates.');
+                    this.reset();
+                });
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

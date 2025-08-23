@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops - Dr. Liana Dance Therapy | Utrecht</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Dr. Liana</h2>
+                <span>Dance Therapy & Psychology</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Events & Workshops</h1>
+                <p>Discover our upcoming dance therapy sessions, workshops, and healing circles in Utrecht</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Events</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-full">
+        <div class="calming-pattern"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">All Upcoming Events</h2>
+                <div class="events-filter">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="workshop">Workshops</button>
+                    <button class="filter-btn" data-filter="group">Group Sessions</button>
+                    <button class="filter-btn" data-filter="individual">Individual</button>
+                </div>
+            </div>
+            
+            <div id="events-container-full" class="events-grid-full">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event -->
+    <section class="featured-event">
+        <div class="container">
+            <div class="featured-event-content">
+                <div class="featured-event-info">
+                    <h2>Monthly Healing Circle</h2>
+                    <p class="event-date">Every First Saturday of the Month</p>
+                    <p class="event-description">Join our monthly community healing circle where we come together to experience the transformative power of collective movement. This is a special opportunity to connect with others on their healing journey while exploring gentle dance therapy techniques.</p>
+                    <div class="event-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-clock"></i>
+                            <span>10:00 AM - 12:00 PM</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Utrecht Community Center</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-users"></i>
+                            <span>Open to All Levels</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openBookingModal(featuredEvent)">
+                        <i class="fas fa-calendar-plus"></i> Join the Circle
+                    </button>
+                </div>
+                <div class="featured-event-image">
+                    <div class="event-image-placeholder">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Categories -->
+    <section class="event-categories">
+        <div class="container">
+            <h2 class="section-title">Event Types</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Workshops</h3>
+                    <p>Intensive 2-4 hour sessions focusing on specific therapeutic techniques and movement practices.</p>
+                    <span class="category-count">3 upcoming</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Sessions</h3>
+                    <p>Regular group therapy sessions for shared healing experiences and community building.</p>
+                    <span class="category-count">2 upcoming</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Healing Circles</h3>
+                    <p>Monthly community gatherings for collective healing and movement exploration.</p>
+                    <span class="category-count">1 upcoming</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Programs</h3>
+                    <p>Professional development courses for therapists and healthcare professionals.</p>
+                    <span class="category-count">1 upcoming</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Liana</h3>
+                    <p>Transforming lives through dance therapy and clinical psychology in Utrecht.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Liana Dance Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('event-modal')">&times;</span>
+            <h2 id="event-modal-title">Event Details</h2>
+            <div id="event-modal-body">
+                <!-- Event details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('booking-modal')">&times;</span>
+            <h2>Book Event</h2>
+            <div id="booking-event-info"></div>
+            <form id="booking-form">
+                <input type="text" id="booking-name" placeholder="Your Name" required>
+                <input type="email" id="booking-email" placeholder="Your Email" required>
+                <input type="tel" id="booking-phone" placeholder="Phone Number" required>
+                <textarea id="booking-notes" placeholder="Additional Notes" rows="3"></textarea>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Featured event data
+        const featuredEvent = {
+            id: 'featured',
+            title: 'Monthly Healing Circle',
+            date: '2024-02-03',
+            time: '10:00',
+            location: 'Utrecht Community Center',
+            price: 25,
+            spots: 20,
+            booked: 8,
+            description: 'Join our monthly community healing circle where we come together to experience the transformative power of collective movement. This is a special opportunity to connect with others on their healing journey while exploring gentle dance therapy techniques.'
+        };
+
+        // Load all events on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllEvents();
+            setupEventFilters();
+            setupFormHandlers();
+        });
+
+        function loadAllEvents() {
+            const container = document.getElementById('events-container-full');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            // Add featured event first
+            const featuredCard = createEventCard(featuredEvent, true);
+            container.appendChild(featuredCard);
+            
+            // Add other events
+            events.forEach(event => {
+                if (event.id !== 1) { // Skip the first event as it's featured
+                    const eventCard = createEventCard(event, false);
+                    container.appendChild(eventCard);
+                }
+            });
+        }
+
+        function createEventCard(event, isFeatured = false) {
+            const card = document.createElement('div');
+            card.className = `event-card ${isFeatured ? 'featured-event-card' : ''} fade-in-up`;
+            card.onclick = () => openEventModal(event);
+            
+            const availableSpots = event.spots - event.booked;
+            const isFullyBooked = availableSpots <= 0;
+            
+            card.innerHTML = `
+                <div class="event-header">
+                    <div class="event-date">${formatDate(event.date)} at ${event.time}</div>
+                    <div class="event-title">${event.title}</div>
+                    ${isFeatured ? '<div class="featured-badge">Featured</div>' : ''}
+                </div>
+                <div class="event-body">
+                    <div class="event-info">
+                        <span><i class="fas fa-map-marker-alt"></i> ${event.location}</span>
+                        <span><i class="fas fa-euro-sign"></i> €${event.price}</span>
+                    </div>
+                    <div class="event-info">
+                        <span><i class="fas fa-users"></i> ${availableSpots} spots left</span>
+                        <span class="${isFullyBooked ? 'text-danger' : 'text-success'}">${isFullyBooked ? 'Fully Booked' : 'Available'}</span>
+                    </div>
+                    <div class="event-description">
+                        ${event.description.substring(0, 150)}...
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-secondary btn-small" onclick="event.stopPropagation(); openEventModal(event)">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <button class="btn btn-primary btn-small" onclick="event.stopPropagation(); openBookingModal(event)" ${isFullyBooked ? 'disabled' : ''}>
+                            <i class="fas fa-calendar-plus"></i> ${isFullyBooked ? 'Fully Booked' : 'Book Now'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function setupEventFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    filterEvents(filter);
+                });
+            });
+        }
+
+        function filterEvents(filter) {
+            const container = document.getElementById('events-container-full');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (filter === 'all') {
+                loadAllEvents();
+                return;
+            }
+            
+            // Filter events based on category (you can add category property to events)
+            const filteredEvents = events.filter(event => {
+                // This is a simple filter - you can enhance it with actual categories
+                if (filter === 'workshop') return event.title.toLowerCase().includes('workshop');
+                if (filter === 'group') return event.title.toLowerCase().includes('group') || event.title.toLowerCase().includes('circle');
+                if (filter === 'individual') return event.title.toLowerCase().includes('individual');
+                return true;
+            });
+            
+            filteredEvents.forEach(event => {
+                const eventCard = createEventCard(event, false);
+                container.appendChild(eventCard);
+            });
+        }
+
+        function formatDate(dateString) {
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        function openEventModal(event) {
+            const modal = document.getElementById('event-modal');
+            const title = document.getElementById('event-modal-title');
+            const body = document.getElementById('event-modal-body');
+            
+            title.textContent = event.title;
+            
+            const availableSpots = event.spots - event.booked;
+            const isFullyBooked = availableSpots <= 0;
+            
+            body.innerHTML = `
+                <div class="event-details">
+                    <div class="detail-item">
+                        <strong><i class="fas fa-calendar"></i> Date & Time:</strong>
+                        <span>${formatDate(event.date)} at ${event.time}</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong><i class="fas fa-map-marker-alt"></i> Location:</strong>
+                        <span>${event.location}</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong><i class="fas fa-euro-sign"></i> Price:</strong>
+                        <span>€${event.price}</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong><i class="fas fa-users"></i> Availability:</strong>
+                        <span>${availableSpots} of ${event.spots} spots available</span>
+                    </div>
+                    <div class="detail-description">
+                        <strong>Description:</strong>
+                        <p>${event.description}</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" onclick="openBookingModal(event); closeModal('event-modal')" ${isFullyBooked ? 'disabled' : ''}>
+                            <i class="fas fa-calendar-plus"></i> ${isFullyBooked ? 'Fully Booked' : 'Book This Event'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function openBookingModal(event) {
+            const modal = document.getElementById('booking-modal');
+            const eventInfo = document.getElementById('booking-event-info');
+            
+            eventInfo.innerHTML = `
+                <div class="booking-event-details">
+                    <h3>${event.title}</h3>
+                    <p><i class="fas fa-calendar"></i> ${formatDate(event.date)} at ${event.time}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                    <p><i class="fas fa-euro-sign"></i> €${event.price}</p>
+                </div>
+            `;
+            
+            document.getElementById('booking-form').dataset.eventId = event.id;
+            modal.style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function setupFormHandlers() {
+            const bookingForm = document.getElementById('booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate booking confirmation
+                    alert('Booking confirmed! You will receive a confirmation email shortly.');
+                    closeModal('booking-modal');
+                    this.reset();
+                });
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
