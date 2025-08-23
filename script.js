@@ -497,14 +497,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect with smooth hide/show
+let lastScrollTop = 0;
+let isNavbarVisible = true;
+const navbar = document.querySelector('.navbar');
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Change background on scroll
+    if (scrollTop > 50) {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.backdropFilter = 'blur(20px)';
+        navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
     } else {
-        navbar.style.background = '#fff';
-        navbar.style.backdropFilter = 'none';
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.backdropFilter = 'blur(20px)';
+        navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+    }
+    
+    // Hide/show navbar based on scroll direction with threshold
+    if (scrollTop > lastScrollTop && scrollTop > 150 && isNavbarVisible) {
+        // Scrolling down - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+        navbar.style.opacity = '0';
+        isNavbarVisible = false;
+    } else if (scrollTop < lastScrollTop && !isNavbarVisible) {
+        // Scrolling up - show navbar
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.opacity = '1';
+        isNavbarVisible = true;
+    }
+    
+    // Always show navbar at the top of the page
+    if (scrollTop <= 100) {
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.opacity = '1';
+        isNavbarVisible = true;
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// Show navbar when hovering near the top of the page
+document.addEventListener('mouseenter', (e) => {
+    if (e.clientY <= 80 && !isNavbarVisible) {
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.opacity = '1';
+        isNavbarVisible = true;
     }
 });
