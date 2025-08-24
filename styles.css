@@ -1572,32 +1572,7 @@ section {
     animation: flowerFloat 2s ease-in-out infinite;
 }
 
-/* Flower Decoration for Section Titles */
-.section-title {
-    position: relative;
-}
 
-.section-title::before {
-    content: '🌸';
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    opacity: 0.6;
-    animation: flowerFloat 4s ease-in-out infinite;
-}
-
-.section-title::after {
-    content: '🌿';
-    position: absolute;
-    right: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    opacity: 0.6;
-    animation: flowerFloat 4s ease-in-out infinite reverse;
-}
 
 /* Enhanced Button Hover Effects with Flower Particles */
 .btn:hover::before {
