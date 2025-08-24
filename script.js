@@ -549,6 +549,9 @@ function openAddBlogModal() {
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
     
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+    
     // Clear forms when closing
     const forms = document.querySelectorAll(`#${modalId} form`);
     forms.forEach(form => form.reset());
@@ -560,9 +563,40 @@ window.onclick = function(event) {
     modals.forEach(modal => {
         if (event.target === modal) {
             modal.style.display = 'none';
+            // Restore body scroll when closing modal by clicking outside
+            document.body.style.overflow = 'auto';
         }
     });
 }
+
+// Close modals with ESC key and restore scroll
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const openModals = document.querySelectorAll('.modal[style*="display: block"]');
+        openModals.forEach(modal => {
+            modal.style.display = 'none';
+            // Restore body scroll when closing modal with ESC
+            document.body.style.overflow = 'auto';
+        });
+    }
+});
+
+// Safety function to ensure body scroll is always restored
+function ensureBodyScroll() {
+    // Check if any modals are open
+    const openModals = document.querySelectorAll('.modal[style*="display: block"]');
+    if (openModals.length === 0) {
+        // No modals are open, ensure body can scroll
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Add event listener to ensure scroll is restored when page becomes visible
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        ensureBodyScroll();
+    }
+});
 
 // Form handlers
 function setupFormHandlers() {
