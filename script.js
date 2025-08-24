@@ -13,6 +13,55 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Hero Section Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Book Consultation button - open booking modal
+    const bookConsultationBtn = document.getElementById('book-consultation-btn');
+    if (bookConsultationBtn) {
+        bookConsultationBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bookingModal = document.getElementById('booking-modal');
+            if (bookingModal) {
+                // Set modal title for general consultation
+                const modalTitle = document.getElementById('booking-modal-title');
+                if (modalTitle) {
+                    modalTitle.textContent = 'Book Consultation';
+                }
+                
+                // Clear any event-specific data
+                const eventInfo = document.getElementById('booking-event-info');
+                if (eventInfo) {
+                    eventInfo.innerHTML = '';
+                }
+                
+                // Remove event ID from form
+                const bookingForm = document.getElementById('booking-form');
+                if (bookingForm) {
+                    delete bookingForm.dataset.eventId;
+                }
+                
+                bookingModal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    }
+
+    // View Events button - scroll to events section
+    const viewEventsBtn = document.getElementById('view-events-btn');
+    if (viewEventsBtn) {
+        viewEventsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const eventsSection = document.getElementById('events');
+            if (eventsSection) {
+                eventsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+});
+
 // Sample data
 let events = [
     {
@@ -522,18 +571,36 @@ function setupFormHandlers() {
         bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Check if this is an event booking or general consultation
             const eventId = parseInt(this.dataset.eventId);
-            const event = events.find(e => e.id === eventId);
             
-            if (event && event.booked < event.spots) {
-                event.booked++;
-                loadEvents();
-                closeModal('booking-modal');
-                
-                // Show success message
-                showNotification('Booking confirmed! You will receive a confirmation email shortly.', 'success');
+            if (eventId) {
+                // Event booking
+                const event = events.find(e => e.id === eventId);
+                if (event && event.booked < event.spots) {
+                    event.booked++;
+                    loadEvents();
+                    closeModal('booking-modal');
+                    showNotification('Event booking confirmed! You will receive a confirmation email shortly.', 'success');
+                } else {
+                    showNotification('Sorry, this event is fully booked.', 'error');
+                }
             } else {
-                showNotification('Sorry, this event is fully booked.', 'error');
+                // General consultation booking
+                const consultationData = {
+                    name: document.getElementById('booking-name').value,
+                    email: document.getElementById('booking-email').value,
+                    phone: document.getElementById('booking-phone').value,
+                    type: document.getElementById('booking-type').value,
+                    notes: document.getElementById('booking-notes').value,
+                    date: new Date().toISOString()
+                };
+                
+                // Here you would typically send this data to your backend
+                console.log('Consultation booking:', consultationData);
+                
+                closeModal('booking-modal');
+                showNotification('Consultation request submitted! We will contact you within 24 hours to confirm your appointment.', 'success');
             }
         });
     }

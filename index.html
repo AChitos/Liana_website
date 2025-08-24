@@ -42,8 +42,8 @@
                 <h1 class="gentle-float">Healing Through Movement</h1>
                 <p class="soft-pulse">Welcome to my practice in Utrecht. I'm Dr. Liana, a clinical psychologist specializing in dance therapy. Together, we'll explore the transformative power of movement and psychology.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Book Consultation</a>
-                    <a href="#events" class="btn btn-secondary">View Events</a>
+                    <button id="book-consultation-btn" class="btn btn-primary" aria-label="Book a consultation with Dr. Liana">Book Consultation</button>
+                    <button id="view-events-btn" class="btn btn-secondary" aria-label="View upcoming events and workshops">View Events</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -283,14 +283,22 @@
     <div id="booking-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('booking-modal')">&times;</span>
-            <h2>Book Event</h2>
+            <h2 id="booking-modal-title">Book Consultation</h2>
             <div id="booking-event-info"></div>
             <form id="booking-form">
                 <input type="text" id="booking-name" placeholder="Your Name" required>
                 <input type="email" id="booking-email" placeholder="Your Email" required>
                 <input type="tel" id="booking-phone" placeholder="Phone Number" required>
-                <textarea id="booking-notes" placeholder="Additional Notes" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                <select id="booking-type" required>
+                    <option value="">Select Consultation Type</option>
+                    <option value="initial">Initial Consultation</option>
+                    <option value="dance-therapy">Dance Therapy Session</option>
+                    <option value="follow-up">Follow-up Session</option>
+                    <option value="group">Group Session</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea id="booking-notes" placeholder="Additional Notes or Specific Concerns" rows="3"></textarea>
+                <button type="submit" class="btn btn-primary">Book Consultation</button>
             </form>
         </div>
     </div>

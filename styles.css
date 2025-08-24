@@ -863,7 +863,8 @@ section {
 .contact-form input,
 .contact-form textarea,
 .modal-content input,
-.modal-content textarea {
+.modal-content textarea,
+.modal-content select {
     width: 100%;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
