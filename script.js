@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Book Consultation button - open booking modal
     const bookConsultationBtn = document.getElementById('book-consultation-btn');
     if (bookConsultationBtn) {
+        console.log('Book Consultation button found and connected');
         bookConsultationBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Book Consultation button clicked');
             const bookingModal = document.getElementById('booking-modal');
             if (bookingModal) {
                 // Set modal title for general consultation
@@ -42,25 +44,80 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 bookingModal.style.display = 'block';
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                console.log('Booking modal opened');
+            } else {
+                console.log('Booking modal not found');
             }
         });
+    } else {
+        console.log('Book Consultation button not found');
     }
 
     // View Events button - scroll to events section
     const viewEventsBtn = document.getElementById('view-events-btn');
     if (viewEventsBtn) {
+        console.log('View Events button found and connected');
         viewEventsBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('View Events button clicked');
             const eventsSection = document.getElementById('events');
             if (eventsSection) {
                 eventsSection.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
                 });
+                console.log('Scrolled to events section');
+            } else {
+                console.log('Events section not found');
             }
         });
+    } else {
+        console.log('View Events button not found');
     }
 });
+
+// Global functions for button functionality
+function openBookingModal() {
+    const bookingModal = document.getElementById('booking-modal');
+    if (bookingModal) {
+        // Set modal title for general consultation
+        const modalTitle = document.getElementById('booking-modal-title');
+        if (modalTitle) {
+            modalTitle.textContent = 'Book Consultation';
+        }
+        
+        // Clear any event-specific data
+        const eventInfo = document.getElementById('booking-event-info');
+        if (eventInfo) {
+            eventInfo.innerHTML = '';
+        }
+        
+        // Remove event ID from form
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            delete bookingForm.dataset.eventId;
+        }
+        
+        bookingModal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        console.log('Booking modal opened via inline function');
+    } else {
+        console.log('Booking modal not found');
+    }
+}
+
+function scrollToEvents() {
+    const eventsSection = document.getElementById('events');
+    if (eventsSection) {
+        eventsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+        console.log('Scrolled to events section via inline function');
+    } else {
+        console.log('Events section not found');
+    }
+}
 
 // Sample data
 let events = [
